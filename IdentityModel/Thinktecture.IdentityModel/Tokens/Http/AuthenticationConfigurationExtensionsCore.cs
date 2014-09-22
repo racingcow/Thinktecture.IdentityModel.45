@@ -42,15 +42,15 @@ namespace Thinktecture.IdentityModel.Tokens.Http
         {
             var validationParameters = new TokenValidationParameters()
             {
-                AllowedAudience = audience,
-                SigningToken = new BinarySecretSecurityToken(Convert.FromBase64String(signingKey)),
+                ValidAudience = audience,
+                IssuerSigningToken = new BinarySecretSecurityToken(Convert.FromBase64String(signingKey)),
                 ValidIssuer = issuer,
             };
 
             configuration.AddJsonWebToken(
                 validationParameters,
-                AuthenticationOptions.ForAuthorizationHeader(JwtConstants.Bearer),
-                AuthenticationScheme.SchemeOnly(JwtConstants.Bearer),
+                AuthenticationOptions.ForAuthorizationHeader(Constants.JwtConstants.Bearer),
+                AuthenticationScheme.SchemeOnly(Constants.JwtConstants.Bearer),
                 claimMappings);
         }
 
@@ -64,8 +64,8 @@ namespace Thinktecture.IdentityModel.Tokens.Http
         {
             var validationParameters = new TokenValidationParameters()
             {
-                AllowedAudience = audience,
-                SigningToken = new BinarySecretSecurityToken(Convert.FromBase64String(signingKey)),
+                ValidAudience = audience,
+                IssuerSigningToken = new BinarySecretSecurityToken(Convert.FromBase64String(signingKey)),
                 ValidIssuer = issuer,
             };
 
@@ -85,15 +85,15 @@ namespace Thinktecture.IdentityModel.Tokens.Http
         {
             var validationParameters = new TokenValidationParameters()
             {
-                AllowedAudience = audience,
-                SigningToken = new X509SecurityToken(signingCertificate),
+                ValidAudience = audience,
+                IssuerSigningToken = new X509SecurityToken(signingCertificate),
                 ValidIssuer = issuer,
             };
 
             configuration.AddJsonWebToken(
                 validationParameters,
-                AuthenticationOptions.ForAuthorizationHeader(JwtConstants.Bearer),
-                AuthenticationScheme.SchemeOnly(JwtConstants.Bearer),
+                AuthenticationOptions.ForAuthorizationHeader(Constants.JwtConstants.Bearer),
+                AuthenticationScheme.SchemeOnly(Constants.JwtConstants.Bearer),
                 claimMappings);
         }
 
@@ -107,8 +107,8 @@ namespace Thinktecture.IdentityModel.Tokens.Http
         {
             var validationParameters = new TokenValidationParameters()
             {
-                AllowedAudience = audience,
-                SigningToken = new X509SecurityToken(signingCertificate),
+                ValidAudience = audience,
+                IssuerSigningToken = new X509SecurityToken(signingCertificate),
                 ValidIssuer = issuer,
             };
 
@@ -250,8 +250,8 @@ namespace Thinktecture.IdentityModel.Tokens.Http
         {
             var validationParameters = new TokenValidationParameters()
             {
-                AllowedAudience = audienceUri,
-                SigningToken = new X509SecurityToken(signingCertificate),
+                ValidAudience = audienceUri,
+                IssuerSigningToken = new X509SecurityToken(signingCertificate),
                 ValidIssuer = issuerName,
             };
 

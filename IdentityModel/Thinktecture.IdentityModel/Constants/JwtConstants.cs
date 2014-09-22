@@ -7,7 +7,7 @@ namespace Thinktecture.IdentityModel.Constants
 {
     public static class JwtConstants
     {
-        public const string JWT = "JWT";
+//        public const string JWT = "JWT";
         public const string Bearer = "Bearer";
 
         public static class SignatureAlgorithms
